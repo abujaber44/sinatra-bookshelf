@@ -1,0 +1,12 @@
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
+<% end %>
+
+<form action="/books" method="post">
+  <input type="text" name="book[title]" placeholder="title" value="<%= @book.title %>">
+  <input type="text" name="book[publisher]" placeholder="publisher" value="<%= @book.publisher %>">
+  <input type="number" name="book[page_length]" placeholder="page length" value="<%= @book.page_length %>">
+  <input type="submit" value="Submit">
+</form>
